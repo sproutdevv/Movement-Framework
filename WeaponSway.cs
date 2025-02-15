@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
         float mouseX = Input.GetAxisRaw("Mouse X") * swayMultiplier;
         float mouseY = Input.GetAxisRaw("Mouse Y") * swayMultiplier;
 
-        // Z-Achsen Rotationsstärke-Konfiguration falls der Spieler sprintet
+        // z-achsis config if the player sprints
         if (PlayerMovement.isSprinting)
         {
             moveLeftZ = sprintValueLeft;
@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
         Quaternion rotationX = Quaternion.AngleAxis(-mouseY , Vector3.right * 10);
         Quaternion rotationY = Quaternion.AngleAxis(mouseX , Vector3.up * 10);
 
-        // Z-Achsen Rotation-Konfiguration
+        // z-achsis rotation config
         float moveRotationZ = Input.GetKey(KeyCode.A) ? moveLeftZ : 0;
         moveRotationZ += Input.GetKey(KeyCode.D) ? moveRightZ : 0;
         Quaternion rotationZ = Quaternion.Euler(0, 0, moveRotationZ);
